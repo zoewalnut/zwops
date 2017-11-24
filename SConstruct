@@ -1,4 +1,9 @@
 
-sources = Glob("*.c")
+sources = [
+    "sub.c",
+    "sum.c",
+    ]
 
-StaticLibrary("zwops", sources)
+lib = StaticLibrary("zwops", sources)
+
+Program("test", "test.c", LIBS=[lib])
